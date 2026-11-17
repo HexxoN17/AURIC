@@ -16,7 +16,7 @@
   Reduces Underwriting Turnaround Time (TAT) by 88% while ensuring 100% RBI Fair-Lending Explainability.
 </p>
 
-[Key Features](#-key-features) • [Architecture](#-architecture) • [Mathematical Foundation](#-mathematical-foundation) • [Quickstart](#-quickstart) • [API Reference](#-api-reference) • [Benchmarks](#-benchmarks--performance) • [FAQ](#-regulatory--interview-faq)
+[Key Features](#-key-features) • [Architecture](#-architecture) • [Mathematical Foundation](#-mathematical-foundation) • [Quickstart](#-quickstart) • [API Reference](#-api-reference) • [Benchmarks](#-benchmarks--performance) 
 
 </div>
 
