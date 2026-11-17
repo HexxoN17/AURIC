@@ -284,28 +284,7 @@ Evaluated against a production-representative dataset ($N = 180,000$) with a nat
 
 ---
 
-## ⚖️ Regulatory & Interview FAQ
 
-<details>
-<summary><b>1. Why LightGBM instead of XGBoost or a Deep Learning model?</b></summary>
-
-* **LightGBM vs. XGBoost:** LightGBM's histogram-based splitting trains **5x–10x faster** on large tabular datasets with significantly lower RAM footprint. Crucially, LightGBM has the fastest C++ implementation of TreeSHAP, enabling sub-200ms real-time API latency.
-* **LightGBM vs. Deep Learning (TabNet):** Neural architectures fail monotonic risk constraints and overfit on tabular financial data with high cardinality. LightGBM adheres strictly to Basel risk modeling criteria.
-</details>
-
-<details>
-<summary><b>2. Why TreeSHAP instead of LIME for explainability?</b></summary>
-
-LIME relies on random local perturbations, making it **non-deterministic** (two runs on the same customer can yield different rejection reasons). In banking, non-deterministic explanations create severe compliance and legal liabilities under **RBI Fair Lending mandates**. TreeSHAP computes exact Shapley values directly through tree paths in polynomial time, guaranteeing deterministic and reproducible Adverse Action codes.
-</details>
-
-<details>
-<summary><b>3. How do you handle severe default class imbalance (97:3)?</b></summary>
-
-Oversampling methods like SMOTE distort posterior probability calibration, corrupting financial Expected Loss calculations ($\text{EL} = \text{PD} \times \text{LGD} \times \text{EAD}$). We instead use **cost-sensitive learning** via LightGBM's `scale_pos_weight` combined with post-hoc **Isotonic Regression calibration**, preserving true probability calibration and maximizing the KS-statistic.
-</details>
-
----
 
 ## 📜 License
 
